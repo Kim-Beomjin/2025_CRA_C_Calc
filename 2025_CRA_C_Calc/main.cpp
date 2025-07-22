@@ -1,10 +1,26 @@
 #include "gmock/gmock.h"
-#include "iostream"
-
-using namespace testing;
-
+#include <random>
 class Cal {
 public:
+	int getSum(int a, int b)
+	{
+		return a + b;
+	}
+
+	int getSumSum(int a, int b, int c)
+	{
+		return a + b + c;
+	}
+	int getGob(int a, int b) {
+		return a * b;
+ 	}
+
+  int getZegop(int a) { return a * a; }
+
+	int GetMinus(int a, int b) {
+		return a - b;
+	}
+  
 	int getDivide(int operand1, int operand2)
 	{
 		int result = 0;
@@ -23,7 +39,7 @@ public:
 	{
 		if (operand2 == 0)
 		{
-			std::cout << "0À¸·Î ³ª´­ ¼ø ¾ø½À´Ï´Ù. (°á°ú´Â 0À¸·Î ³ª°©´Ï´Ù.)";
+			std::cout << "0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½. (ï¿½ï¿½ï¿½ï¿½ï¿½ 0ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½.)";
 
 			return false;
 		}
@@ -32,9 +48,60 @@ public:
 	}
 };
 
-TEST(t1, t2)
+TEST(t1, getSum) {
+	Cal cal;
+	int a = 1, b = 2;
+	int result;
+
+	result = cal.getSum(a, b);
+	EXPECT_EQ(a + b, result);
+}
+
+TEST(t1, getSumSum) {
+	Cal cal;
+	int a = 1, b = 2, c = 3;
+	int result;
+
+	result = cal.getSumSum(a, b, c);
+	EXPECT_EQ(a + b + c, result);
+}
+
+TEST(t1, getZegopTest) {
+	Cal cal;
+	EXPECT_EQ(100, cal.getZegop(10));
+}
+TEST(calculate_test, minus)
 {
-	EXPECT_EQ(1, 1);
+	Cal calculator;
+	for (int i = 0; i < 1000; i++) {
+		int a = rand();
+		int b = rand();
+		EXPECT_EQ(calculator.GetMinus(a, b), (a - b));
+	}
+}
+
+TEST(t1, GobLeftZero) {
+	Cal cal;
+	int expect = 0;
+	int real = cal.getGob(0, 1);
+
+	EXPECT_EQ(expect, real);
+}
+
+TEST(t1, GobRightZero) {
+	Cal cal;
+	int expect = 0;
+	int real = cal.getGob(1, 0);
+
+	EXPECT_EQ(expect, real);
+}
+
+TEST(t1, GobNormal) {
+	Cal cal;
+	int expect = 10;
+	int real = cal.getGob(2, 5);
+
+	EXPECT_EQ(expect, real);
 }
 
 int main() {
