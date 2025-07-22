@@ -11,11 +11,11 @@ public:
 	{
 		return a + b + c;
 	}
-
+  
 	int getGob(int a, int b) 
 	{
 		return a * b;
-	}
+ 	}
 
 	int getZegop(int a) 
 	{ 
@@ -68,7 +68,7 @@ TEST(calculate_test, getGob_LeftZero) {
 	EXPECT_EQ(expect, real);
 }
 
-TEST(calculate_test, getGobRightZero) {
+TEST(calculate_test, getGob_RightZero) {
 	Cal cal;
 	int expect = 0;
 	int real = cal.getGob(1, 0);
