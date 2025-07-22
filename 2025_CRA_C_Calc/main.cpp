@@ -10,6 +10,7 @@ public:
 	int getSumSum(int a, int b, int c)
 	{
 		return a + b + c;
+	int getZegop(int a) { return a * a; }
 	int GetMinus(int a, int b) {
 		return a - b;
 	}
