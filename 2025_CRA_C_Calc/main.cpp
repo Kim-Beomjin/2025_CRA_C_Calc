@@ -10,18 +10,25 @@ public:
 	int getSumSum(int a, int b, int c)
 	{
 		return a + b + c;
-	int getGob(int a, int b) {
+	}
+
+	int getGob(int a, int b) 
+	{
 		return a * b;
 	}
 
-  int getZegop(int a) { return a * a; }
+	int getZegop(int a) 
+	{ 
+		return a * a; 
+	}
 
-	int GetMinus(int a, int b) {
+	int GetMinus(int a, int b) 
+	{
 		return a - b;
 	}
 };
 
-TEST(t1, getSum) {
+TEST(calculate_test, getSum) {
 	Cal cal;
 	int a = 1, b = 2;
 	int result;
@@ -30,7 +37,7 @@ TEST(t1, getSum) {
 	EXPECT_EQ(a + b, result);
 }
 
-TEST(t1, getSumSum) {
+TEST(calculate_test, getSumSum) {
 	Cal cal;
 	int a = 1, b = 2, c = 3;
 	int result;
@@ -39,11 +46,11 @@ TEST(t1, getSumSum) {
 	EXPECT_EQ(a + b + c, result);
 }
 
-TEST(t1, getZegopTest) {
+TEST(calculate_test, getZegop) {
 	Cal cal;
 	EXPECT_EQ(100, cal.getZegop(10));
 }
-TEST(calculate_test, minus)
+TEST(calculate_test, getMinus)
 {
 	Cal calculator;
 	for (int i = 0; i < 1000; i++) {
@@ -53,7 +60,7 @@ TEST(calculate_test, minus)
 	}
 }
 
-TEST(t1, GobLeftZero) {
+TEST(calculate_test, getGob_LeftZero) {
 	Cal cal;
 	int expect = 0;
 	int real = cal.getGob(0, 1);
@@ -61,7 +68,7 @@ TEST(t1, GobLeftZero) {
 	EXPECT_EQ(expect, real);
 }
 
-TEST(t1, GobRightZero) {
+TEST(calculate_test, getGobRightZero) {
 	Cal cal;
 	int expect = 0;
 	int real = cal.getGob(1, 0);
@@ -69,7 +76,7 @@ TEST(t1, GobRightZero) {
 	EXPECT_EQ(expect, real);
 }
 
-TEST(t1, GobNormal) {
+TEST(calculate_test, getGob_Normal) {
 	Cal cal;
 	int expect = 10;
 	int real = cal.getGob(2, 5);
