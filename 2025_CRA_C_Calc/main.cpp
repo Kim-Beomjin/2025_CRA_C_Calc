@@ -4,6 +4,10 @@ class Cal {
 public:
 	int getGob(int a, int b) {
 		return a * b;
+  }
+
+	int GetMinus(int a, int b) {
+		return a - b;
 	}
 };
 
