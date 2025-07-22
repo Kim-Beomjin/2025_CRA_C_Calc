@@ -60,7 +60,7 @@ TEST(calculate_test, getMinus)
 	}
 }
 
-TEST(calculate_test, getGob_LeftZero) {
+TEST(calculate_test, getGobLeftZero) {
 	Cal cal;
 	int expect = 0;
 	int real = cal.getGob(0, 1);
@@ -76,7 +76,7 @@ TEST(calculate_test, getGobRightZero) {
 	EXPECT_EQ(expect, real);
 }
 
-TEST(calculate_test, getGob_Normal) {
+TEST(calculate_test, getGobNormal) {
 	Cal cal;
 	int expect = 10;
 	int real = cal.getGob(2, 5);
