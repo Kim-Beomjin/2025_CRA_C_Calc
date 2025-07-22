@@ -14,16 +14,12 @@ public:
 		return a * b;
   }
 
-	int getZegop(int a) { return a * a; }
+  int getZegop(int a) { return a * a; }
 
   int GetMinus(int a, int b) {
 		return a - b;
 	}
 };
-
-TEST(t1, t2) {
-	EXPECT_EQ(1, 1);
-}
 
 TEST(t1, getSum) {
 	Cal cal;
@@ -42,6 +38,12 @@ TEST(t1, getSumSum) {
 	result = cal.getSumSum(a, b, c);
 	EXPECT_EQ(a + b + c, result);
 }
+
+TEST(t1, getZegopTest) {
+	Cal cal;
+	EXPECT_EQ(100, cal.getZegop(10));
+}
+
 int main() {
 	::testing::InitGoogleMock();
 	return RUN_ALL_TESTS();
