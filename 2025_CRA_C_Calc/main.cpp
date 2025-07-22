@@ -2,6 +2,7 @@
 
 class Cal {
 public:
+	int getZegop(int a) { return a * a; }
 	int GetMinus(int a, int b) {
 		return a - b;
 	}
