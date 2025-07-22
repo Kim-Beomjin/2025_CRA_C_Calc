@@ -2,7 +2,7 @@
 
 class Cal {
 public:
-
+	int getZegop(int a) { return a * a; }
 };
 
 TEST(t1, t2) {
