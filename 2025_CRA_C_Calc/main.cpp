@@ -10,6 +10,8 @@ public:
 	int getSumSum(int a, int b, int c)
 	{
 		return a + b + c;
+	int GetMinus(int a, int b) {
+		return a - b;
 	}
 };
 
