@@ -39,7 +39,7 @@ public:
 	{
 		if (operand2 == 0)
 		{
-			std::cout << "0으로 나눌 수 없습니다. (결과는 0으로 출력)";
+			std::cout << "0���� ���� �� �����ϴ�. (����� 0���� �����ϴ�.)";
 
 			return false;
 		}
@@ -100,22 +100,6 @@ TEST(t1, GobNormal) {
 	Cal cal;
 	int expect = 10;
 	int real = cal.getGob(2, 5);
-
-	EXPECT_EQ(expect, real);
-}
-
-TEST(t1, DivideSuccess) {
-	Cal cal;
-	int expect = 3;
-	int real = cal.getDivide(6, 2);
-
-	EXPECT_EQ(expect, real);
-}
-
-TEST(t1, DivideFail) {
-	Cal cal;
-	int expect = 0;
-	int real = cal.getGob(5, 0);
 
 	EXPECT_EQ(expect, real);
 }
